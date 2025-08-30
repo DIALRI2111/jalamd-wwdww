@@ -122,6 +122,32 @@
       </div>
     </section>
 
+    <!-- Music Player -->
+    <div class="music-player">
+      <audio id="bgMusic" loop>
+        <source src="kaoru.mpeg" type="audio/mpeg" />
+        Browser kamu tidak mendukung audio tag.
+      </audio>
+      <button id="musicBtn" class="btn-music">🎵</button>
+    </div>
+
+    <script>
+      const music = document.getElementById("bgMusic");
+      const btn = document.getElementById("musicBtn");
+      let isPlaying = false;
+
+      btn.addEventListener("click", () => {
+        if (isPlaying) {
+          music.pause();
+          btn.textContent = "🔇"; // jika pause
+        } else {
+          music.play();
+          btn.textContent = "🎵"; // jika play
+        }
+        isPlaying = !isPlaying;
+      });
+    </script>
+
     <!-- Footer -->
     <footer class="footer">
       <p>Semoga kita bisa lebih dekat, bersama, dan bahagia. 🌸</p>
